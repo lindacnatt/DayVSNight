@@ -7,13 +7,13 @@ public class PlayerMovement : MonoBehaviour
 
     public int m_PlayerNumber = 1;
     public float m_Speed = 12f;
-    public float m_TurnSpeed = 180f;
 
-    private string m_MovementAxisName;
-    private string m_TurnAxisName;
+    private string m_MovementForward; //vertical axis 
+    private string m_MovementSide; //horizontal axis
+    
     private Rigidbody m_Rigidbody;
-    private float m_MovementInputValue;
-    private float m_TurnInputValue;
+    private float m_ForwardInputValue;
+    private float m_SideInputValue;
 
     private void Awake(){
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -21,46 +21,38 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable(){
         m_Rigidbody.isKinematic = false;
-        m_MovementInputValue = 0f;
-        m_TurnInputValue = 0f;
+        m_ForwardInputValue = 0f;
+        m_SideInputValue = 0f;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        m_MovementAxisName = "Vertical" + m_PlayerNumber;
-        m_TurnAxisName = "Horizontal" + m_PlayerNumber; 
+        m_MovementForward = "Vertical" + m_PlayerNumber;
+        m_MovementSide = "Horizontal" + m_PlayerNumber; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_MovementInputValue = Input.GetAxis(m_MovementAxisName);
-        m_TurnInputValue = Input.GetAxis(m_TurnAxisName);  
+        m_ForwardInputValue = Input.GetAxis(m_MovementForward);
+        m_SideInputValue = Input.GetAxis(m_MovementSide);  
     }
 
     private void FixedUpdate(){
-        Move();
-        Turn();
+        MoveForward();
+        MoveSideways();
     }
     //forward backwards
-    private void Move(){
-        Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
-        m_Rigidbody.MovePosition(m_Rigidbody.position + movement); 
+    private void MoveForward(){
+        Vector3 movementFront = transform.forward * m_ForwardInputValue * m_Speed * Time.deltaTime;
+        m_Rigidbody.MovePosition(m_Rigidbody.position + movementFront); 
     }
 
-    private void Turn(){
+    private void MoveSideways(){
 
-        Vector3 movement2 = transform.right * m_TurnInputValue * m_Speed * Time.deltaTime;
-        m_Rigidbody.MovePosition(m_Rigidbody.position + movement2); 
-
-        /*
-         float turn = m_TurnInputValue *m_TurnSpeed * Time.deltaTime;
-
-         Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
-
-         m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
-         */
+        Vector3 movementSide = transform.right * m_SideInputValue * m_Speed * Time.deltaTime;
+        m_Rigidbody.MovePosition(m_Rigidbody.position + movementSide); 
     }
 
 }
