@@ -26,7 +26,8 @@ public class MyGUI : MonoBehaviour
             return;
         }
 
-        GUI.DrawTexture(new Rect(10, 10, 1600, 900), aTexture, ScaleMode.ScaleToFit, true, 10.0F);
+        // GUI.DrawTexture(new Rect(150, 100, 1600, 900), aTexture, ScaleMode.ScaleToFit, true, 10.0F);  // Not quite good
+
         // Make a background box for the start menu
         GUI.Box(new Rect(200, 200, 100, 200), "Menu");
 
