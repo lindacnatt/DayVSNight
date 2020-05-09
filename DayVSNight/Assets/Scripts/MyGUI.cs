@@ -39,7 +39,9 @@ public class MyGUI : MonoBehaviour
         // GUI.DrawTexture(new Rect(150, 100, 1600, 900), aTexture, ScaleMode.ScaleToFit, true, 10.0F);  // Not quite good
 
         // Make a background box for the start menu
+        GUI.DrawTexture(new Rect(0, 0, 1500, 800), aTexture, ScaleMode.ScaleToFit, true);
         GUI.Box(new Rect(marginx, marginy, screenwidth, 400), "");
+
         GUI.skin.box = styleBox;
 
         // Make the first button. If it is pressed, Application.Loadlevel (1) will be executed

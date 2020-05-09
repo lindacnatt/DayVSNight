@@ -169,8 +169,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1600
-    height: 900
+    width: 1500
+    height: 1000
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -221,7 +221,7 @@ MonoBehaviour:
   styleBox:
     m_Name: Box
     m_Normal:
-      m_Background: {fileID: 2800000, guid: b9e042c1bb530b44a99a653892292d23, type: 3}
+      m_Background: {fileID: 0}
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Hover:
