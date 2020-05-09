@@ -5,6 +5,9 @@ using UnityEngine;
 public class MyGUI : MonoBehaviour
 {
     public Texture aTexture;
+    public GUIStyle styleBox;
+    public GUIStyle styleButton;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,23 +28,33 @@ public class MyGUI : MonoBehaviour
             Debug.LogError("Assign a Texture in the inspector.");
             return;
         }
+        
+        int screenwidth = 700;
+        int buttonwidth = 80;
+        int buttonheight = 40;
+        float marginx = (1500-screenwidth)/2;
+        int marginy = 200;
+       
 
         // GUI.DrawTexture(new Rect(150, 100, 1600, 900), aTexture, ScaleMode.ScaleToFit, true, 10.0F);  // Not quite good
 
         // Make a background box for the start menu
-        GUI.Box(new Rect(200, 200, 100, 200), "Menu");
+        GUI.Box(new Rect(marginx, marginy, screenwidth, 400), "");
+        GUI.skin.box = styleBox;
 
         // Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-        if (GUI.Button(new Rect(20, 40, 80, 20), "Start"))
+        if (GUI.Button(new Rect(marginx+(screenwidth-buttonwidth)/2, marginy+140, buttonwidth, buttonheight), "Start"))
         {
             Debug.Log("Start!");
             //Application.LoadLevel(1);
         }
 
         // Make the second button, quit application if pressed.
-        if (GUI.Button(new Rect(20, 70, 80, 20), "Quit"))
+        if (GUI.Button(new Rect(marginx + (screenwidth - buttonwidth) / 2, marginy + buttonheight + 160, buttonwidth, buttonheight), "Quit"))
         {
             Application.Quit();
         }
+        GUI.skin.button = styleButton;
+
     }
 }
