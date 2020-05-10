@@ -26,12 +26,11 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float amount){
         m_CurrentHealth -= amount;
 
-        SetHealthUI();
-
         if(m_CurrentHealth <= 0f && !m_Dead)
         {
             onDeath();
         }
+        SetHealthUI();
     }
 
     private void SetHealthUI(){
