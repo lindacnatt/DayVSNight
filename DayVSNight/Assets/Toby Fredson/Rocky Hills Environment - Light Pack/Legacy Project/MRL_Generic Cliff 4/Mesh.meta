@@ -1,8 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: a2cd0c7c456c81f48b98d74ea7616fab
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
+=======
+guid: c53c8937afde52541ac929759528b65b
+folderAsset: yes
+timeCreated: 1494179549
+licenseType: Store
+DefaultImporter:
+>>>>>>> playfield
   userData: 
   assetBundleName: 
   assetBundleVariant: 
