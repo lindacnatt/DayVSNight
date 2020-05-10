@@ -138,9 +138,11 @@ MonoBehaviour:
     height: 597
   m_MinSize: {x: 710, y: 492}
   m_MaxSize: {x: 18005, y: 14042}
+
   vertical: 0
   controlID: 10888
 --- !u!114 &7
+
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,6 +194,7 @@ MonoBehaviour:
   vertical: 1
   controlID: 10889
 --- !u!114 &9
+
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,6 +276,7 @@ MonoBehaviour:
   vertical: 1
   controlID: 10917
 --- !u!114 &12
+ 
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -808,7 +812,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 1}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 199
