@@ -138,7 +138,7 @@ GameObject:
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!81 &1144016651
 AudioListener:
@@ -169,8 +169,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1500
-    height: 1000
+    width: 1280
+    height: 800
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
