@@ -23,34 +23,35 @@ public class StartGUI : MonoBehaviour
 
     void OnGUI()
     {
+
         if (!aTexture)  //Check that there is a texture
         {
             Debug.LogError("Assign a Texture in the inspector.");
             return;
         }
         
-        int screenwidth = 700;
+        int screenwidth = Screen.width;
         int buttonwidth = 80;
         int buttonheight = 40;
-        float marginx = (1280-screenwidth)/2;
+        float marginx = (screenwidth-700)/2;
         int marginy = 200;
        
 
         // GUI.DrawTexture(new Rect(150, 100, 1600, 900), aTexture, ScaleMode.ScaleToFit, true, 10.0F);  // Not quite good
 
         // Make a background box for the start menu
-        GUI.DrawTexture(new Rect(0, 0, 1280, 800), aTexture, ScaleMode.ScaleToFit, true);
+        GUI.DrawTexture(new Rect(0, 0, screenwidth, Screen.height), aTexture, ScaleMode.ScaleToFit, true);
 
 
         // Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-        if (GUI.Button(new Rect(marginx+(screenwidth-buttonwidth)/2, marginy+140, buttonwidth, buttonheight), "Start"))
+        if (GUI.Button(new Rect(marginx+(700-buttonwidth)/2, marginy+140, buttonwidth, buttonheight), "Start"))
         {
             Debug.Log("Start!");
             //Application.LoadLevel(1);
         }
 
         // Make the second button, quit application if pressed.
-        if (GUI.Button(new Rect(marginx + (screenwidth - buttonwidth) / 2, marginy + buttonheight + 160, buttonwidth, buttonheight), "Quit"))
+        if (GUI.Button(new Rect(marginx + (700 - buttonwidth) / 2, marginy + buttonheight + 160, buttonwidth, buttonheight), "Quit"))
         {
             Application.Quit();
         }
