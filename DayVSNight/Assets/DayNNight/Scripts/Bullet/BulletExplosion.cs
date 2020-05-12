@@ -9,23 +9,24 @@ public class BulletExplosion : MonoBehaviour
     public float m_MaxDamage = 100f;
     public float m_ExplosionForce = 1000f;
     public float m_MaxLifeTime = 2f;
-    public float m_ExplosionRadius = 5f;
+    public float m_ExplosionRadius = 10f;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Destroy(gameObject, m_MaxLifeTime);
     }
     private void onTriggerEnter(Collider other){
         Collider[] colliders = Physics.OverlapSphere (transform.position, m_ExplosionRadius, m_PlayerMask);
 
-        for (int i = 0; i< colliders.Length; i++){
+        for (int i = 0; i < colliders.Length; i++){
+            
             Rigidbody targetRigidbody = colliders[i].GetComponent<Rigidbody>(); // Find a rigidbody
-
+            Debug.Log("HIT BODY");
             if(!targetRigidbody)
                 continue;
                  
             targetRigidbody.AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
-            
+
             PlayerHealth targetHealth = targetRigidbody.GetComponent<PlayerHealth>();
             
             if(!targetHealth)
@@ -37,8 +38,9 @@ public class BulletExplosion : MonoBehaviour
         }
         m_ExplosionParticles.transform.parent = null;
         m_ExplosionParticles.Play();
+         Debug.Log("explode");
 
-        Destroy(m_ExplosionParticles.gameObject, m_ExplosionParticles.main.duration);
+       // Destroy(m_ExplosionParticles.gameObject, m_ExplosionParticles.main.duration);
         Destroy(gameObject);
 
     }
@@ -55,7 +57,5 @@ public class BulletExplosion : MonoBehaviour
         damage = Mathf.Max(0f, damage);
         
         return damage;
-
-
     }
 }
