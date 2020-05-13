@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Slider: {fileID: 0}
   m_FillImage: {fileID: 0}
   Score: {fileID: 0}
-  m_FullHealthColor: {r: 0, g: 0.8301887, b: 0.07041743, a: 1}
+  m_FullHealthColor: {r: 0.0141509175, g: 1, b: 0.093913585, a: 1}
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_ExplosionPrefab: {fileID: 3250727233674127214, guid: b78ee624c50ed4eb0b184a9156d49a8a,
     type: 3}
@@ -401,6 +401,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204767831862130134, guid: bab83520501184a21aafc5c2db198216,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bab83520501184a21aafc5c2db198216, type: 3}
