@@ -8,10 +8,10 @@ namespace Complete
     {
         public LayerMask m_PlayerMask;
         public ParticleSystem m_ExplosionParticles;
-        public float m_MaxDamage = 100f;
-        public float m_ExplosionForce = 100f;
+        public float m_MaxDamage = 50f;
+        public float m_ExplosionForce = 10f;
         public float m_MaxLifeTime = 2f;
-        public float m_ExplosionRadius = 10f;
+        public float m_ExplosionRadius = 5f;
         // Start is called before the first frame update
         private void Start ()
             {
