@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1805660438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1805660439}
+  m_Layer: 8
+  m_Name: Fire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1805660439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805660438}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7126935035366669785}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1492426843702753164
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
+  m_Color: {r: 0.7294118, g: 0.7294118, b: 0.7294118, a: 0.6}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -276,6 +306,7 @@ GameObject:
   - component: {fileID: 708486054217597330}
   - component: {fileID: 1948046965}
   - component: {fileID: 586548601}
+  - component: {fileID: 117673901}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -296,6 +327,7 @@ Transform:
   m_Children:
   - {fileID: 7037807454229908099}
   - {fileID: 3014884408663239580}
+  - {fileID: 1805660439}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -357,7 +389,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &708486054217597330
 Rigidbody:
@@ -402,12 +434,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StartingHealth: 100
-  m_Slider: {fileID: 6248090830591403084}
-  m_FillImage: {fileID: 625844205558608893}
-  m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
+  m_Slider: {fileID: 0}
+  m_FillImage: {fileID: 0}
+  Score: {fileID: 0}
+  m_FullHealthColor: {r: 0, g: 0.8301887, b: 0.07041743, a: 1}
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_ExplosionPrefab: {fileID: 3250727233674127214, guid: b78ee624c50ed4eb0b184a9156d49a8a,
     type: 3}
+--- !u!114 &117673901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126601037366885037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d3aecdbbc324f1cad777bbae827b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerNumber: 1
+  m_Bullet: {fileID: 2677640124785611781, guid: a6d67e72faa8b4bb3aa2a075a4badc06,
+    type: 3}
+  m_FirePosition: {fileID: 1805660439}
+  m_LaunchForce: 15
 --- !u!1 &5138971087754333358
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +510,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5138971087754333358}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -533,7 +583,7 @@ PrefabInstance:
     - target: {fileID: 1204767831862130132, guid: bab83520501184a21aafc5c2db198216,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1204767831862130132, guid: bab83520501184a21aafc5c2db198216,
         type: 3}

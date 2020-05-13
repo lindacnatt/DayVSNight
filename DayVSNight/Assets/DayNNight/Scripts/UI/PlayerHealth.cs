@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
     public float m_StartingHealth = 100f;
     public Slider m_Slider;
     public Image m_FillImage;
+    public Text Score;
     public Color m_FullHealthColor = Color.green;
     public Color m_ZeroHealthColor = Color.red;
 
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
     private void OnEnable(){
         m_CurrentHealth = m_StartingHealth;
         m_Dead = false;
+        Score.text = "100/" + Mathf.RoundToInt(m_CurrentHealth);
 
         SetHealthUI();
         Debug.Log("I have full health" + m_CurrentHealth);
@@ -32,12 +34,20 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount){
         m_CurrentHealth -= amount;
+        
 
         if(m_CurrentHealth <= 0f && !m_Dead)
         {
             onDeath();
+            Score.text = "Dead";
         }
+        else if (m_CurrentHealth > 0f){
+        Score.text = "100/" + Mathf.RoundToInt(m_CurrentHealth);
+        }
+
         SetHealthUI();
+       
+        
     }
 
     private void SetHealthUI(){
