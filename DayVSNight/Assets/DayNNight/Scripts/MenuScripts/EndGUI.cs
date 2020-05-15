@@ -61,7 +61,7 @@ public class EndGUI : MonoBehaviour
         if (GUI.Button(new Rect(marginx + (700 - buttonwidth) / 2, marginy + 140, buttonwidth, buttonheight), "Start"))
         {
             Debug.Log("Play Again!");
-            //Application.LoadLevel(1);
+            //SceneManager.LoadScene("Game");
         }
 
         // Make the second button, quit application if pressed.

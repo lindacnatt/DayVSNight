@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public DayNightCycle Sun;
+    public DayNightCycle Moon;
     public float m_StartingHealth = 100f;
     public Slider m_Slider;
     public Image m_FillImage;
@@ -34,12 +38,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount){
         m_CurrentHealth -= amount;
-        
+        Sun.SunHit();
+        Moon.SunHit();       // Toggles the sun/moon to go through one step of the day night cycle
 
         if(m_CurrentHealth <= 0f && !m_Dead)
         {
             onDeath();
             Score.text = "Dead";
+           // SceneManager.LoadScene("EndGUI");
         }
         else if (m_CurrentHealth > 0f){
         Score.text = "100/" + Mathf.RoundToInt(m_CurrentHealth);

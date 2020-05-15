@@ -20,17 +20,20 @@ public class DayNightCycle : MonoBehaviour
     {
         
     }
-    public void SunHit() {
+
+    public void SunHit() {  //Sun gets hit, sun sets
 
         transform.RotateAround(Vector3.zero, Vector3.right, 10f);
         transform.LookAt(Vector3.zero);
     }
-    public void MoonHit()
+    public void MoonHit()  // Moon gets hit, sun rises
     {
 
         transform.RotateAround(Vector3.zero, Vector3.right, -10f);
         transform.LookAt(Vector3.zero);
     }
+
+    // Alternative: Boolean on player defining if sun or not, Hit(boolean sun) function which checks if the player that got hit is the sun, in that cas do SunHit, otherwise do MoonHit -- not sure how to declare the lights though!!
 
     
 }
