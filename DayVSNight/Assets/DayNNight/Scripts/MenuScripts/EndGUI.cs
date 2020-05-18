@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class EndGUI : MonoBehaviour
 {
@@ -11,8 +13,7 @@ public class EndGUI : MonoBehaviour
     public GUIStyle styleBox;
     public GUIStyle styleButton;
 
-    public bool MOONWINNER = true;
-    public bool SUNWINNER = false;
+    public bool sunwinner;
 
 
     // Start is called before the first frame update
@@ -45,12 +46,12 @@ public class EndGUI : MonoBehaviour
         // GUI.DrawTexture(new Rect(150, 100, 1600, 900), aTexture, ScaleMode.ScaleToFit, true, 10.0F);  // Not quite good
 
         // Make a background box for the scene
-        if (MOONWINNER)
+        if (!sunwinner)
         {
             GUI.DrawTexture(new Rect(0, 0, screenwidth, Screen.height), NightTexture, ScaleMode.ScaleToFit, true);
 
         }
-        if (SUNWINNER)
+        if (sunwinner)
         {
             GUI.DrawTexture(new Rect(0, 0, screenwidth, Screen.height), DayTexture, ScaleMode.ScaleToFit, true);
 
@@ -58,10 +59,10 @@ public class EndGUI : MonoBehaviour
 
 
         // Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-        if (GUI.Button(new Rect(marginx + (700 - buttonwidth) / 2, marginy + 140, buttonwidth, buttonheight), "Start"))
+        if (GUI.Button(new Rect(marginx + (700 - buttonwidth) / 2, marginy + 140, buttonwidth, buttonheight), "Play Again!"))
         {
             Debug.Log("Play Again!");
-            //SceneManager.LoadScene("Game");
+            SceneManager.LoadScene(0);
         }
 
         // Make the second button, quit application if pressed.
