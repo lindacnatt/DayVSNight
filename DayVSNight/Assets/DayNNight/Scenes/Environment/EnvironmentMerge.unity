@@ -339,12 +339,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1555771769370199784}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &163502363 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7715042458859405626, guid: 11e23a1d542b441e3ba736dee2f24d8f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1555771769370199784}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &167975671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -895,7 +889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 346987573}
   - component: {fileID: 346987574}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1946,6 +1940,11 @@ PrefabInstance:
     - target: {fileID: 5126601037366885037, guid: 27ec31c4a3c4842c9a588020201e1bff,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126601037366885037, guid: 27ec31c4a3c4842c9a588020201e1bff,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7126935035366669785, guid: 27ec31c4a3c4842c9a588020201e1bff,
@@ -3491,12 +3490,6 @@ Transform:
 --- !u!4 &1240718084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1555771769514396052, guid: 11e23a1d542b441e3ba736dee2f24d8f,
-    type: 3}
-  m_PrefabInstance: {fileID: 2054129256}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1241165167 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7715042458859405626, guid: 11e23a1d542b441e3ba736dee2f24d8f,
     type: 3}
   m_PrefabInstance: {fileID: 2054129256}
   m_PrefabAsset: {fileID: 0}
@@ -6739,6 +6732,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1555771769514396008, guid: 11e23a1d542b441e3ba736dee2f24d8f,
         type: 3}
+      propertyPath: Sun
+      value: 
+      objectReference: {fileID: 1256359953}
+    - target: {fileID: 1555771769514396008, guid: 11e23a1d542b441e3ba736dee2f24d8f,
+        type: 3}
+      propertyPath: Moon
+      value: 
+      objectReference: {fileID: 1658360647}
+    - target: {fileID: 1555771769514396008, guid: 11e23a1d542b441e3ba736dee2f24d8f,
+        type: 3}
       propertyPath: m_Slider
       value: 
       objectReference: {fileID: 1565091474}
@@ -6752,16 +6755,6 @@ PrefabInstance:
       propertyPath: Score
       value: 
       objectReference: {fileID: 1638213496}
-    - target: {fileID: 1555771769514396008, guid: 11e23a1d542b441e3ba736dee2f24d8f,
-        type: 3}
-      propertyPath: Sun
-      value: 
-      objectReference: {fileID: 1256359953}
-    - target: {fileID: 1555771769514396008, guid: 11e23a1d542b441e3ba736dee2f24d8f,
-        type: 3}
-      propertyPath: Moon
-      value: 
-      objectReference: {fileID: 1658360647}
     - target: {fileID: 1555771769514396051, guid: 11e23a1d542b441e3ba736dee2f24d8f,
         type: 3}
       propertyPath: m_Name
@@ -6822,17 +6815,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1856123464637887641, guid: 11e23a1d542b441e3ba736dee2f24d8f,
-        type: 3}
-      propertyPath: m_FirePosition
-      value: 
-      objectReference: {fileID: 1241165167}
-    - target: {fileID: 1856123464637887641, guid: 11e23a1d542b441e3ba736dee2f24d8f,
-        type: 3}
-      propertyPath: m_Bullet
-      value: 
-      objectReference: {fileID: 2677640124785611781, guid: a6d67e72faa8b4bb3aa2a075a4badc06,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e23a1d542b441e3ba736dee2f24d8f, type: 3}
 --- !u!1 &2055118686
@@ -7133,16 +7115,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1856123464637887641, guid: 11e23a1d542b441e3ba736dee2f24d8f,
-        type: 3}
-      propertyPath: m_FirePosition
-      value: 
-      objectReference: {fileID: 163502363}
-    - target: {fileID: 1856123464637887641, guid: 11e23a1d542b441e3ba736dee2f24d8f,
-        type: 3}
-      propertyPath: m_Bullet
-      value: 
-      objectReference: {fileID: 2677640124785611781, guid: a6d67e72faa8b4bb3aa2a075a4badc06,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e23a1d542b441e3ba736dee2f24d8f, type: 3}

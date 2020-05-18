@@ -310,6 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85a643aa5c7e4d67aff281cdf1194dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sun: {fileID: 0}
+  Moon: {fileID: 0}
   m_StartingHealth: 100
   m_Slider: {fileID: 0}
   m_FillImage: {fileID: 0}
