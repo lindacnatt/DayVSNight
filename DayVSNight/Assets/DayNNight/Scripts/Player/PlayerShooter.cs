@@ -15,7 +15,7 @@ namespace Complete
         private float m_CurrentLaunchForce;               // The input axis that is used for launching shells.
 
 
-       private void OnEnable()
+        private void OnEnable()
         {
             m_CurrentLaunchForce = m_LaunchForce;
         }
