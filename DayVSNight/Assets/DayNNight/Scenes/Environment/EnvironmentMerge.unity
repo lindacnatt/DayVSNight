@@ -2065,6 +2065,10 @@ PrefabInstance:
       propertyPath: Moon
       value: 
       objectReference: {fileID: 1658360647}
+    - target: {fileID: 1814939822, guid: 27ec31c4a3c4842c9a588020201e1bff, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 708486054217597330, guid: 27ec31c4a3c4842c9a588020201e1bff,
         type: 3}
       propertyPath: m_Constraints
