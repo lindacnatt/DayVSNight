@@ -2,11 +2,16 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public DayNightCycle Sun;
     public DayNightCycle Moon;
+    public bool Player;
+    public List<GameObject> Enemies;
+    private EndGUI end;
+
     public float m_StartingHealth = 100f;
     public Slider m_Slider;
     public Image m_FillImage;
@@ -38,14 +43,23 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount){
         m_CurrentHealth -= amount;
-        Sun.SunHit();
-        Moon.SunHit();       // Toggles the sun/moon to go through one step of the day night cycle
+        if (Player)
+        {
+            Sun.SunHit(amount);
+            Moon.SunHit(amount);       // Toggles the sun/moon to go through one step of the day night cycle
+        }
+        if (!Player)
+        {
+            Sun.MoonHit(amount);
+            Moon.MoonHit(amount);
 
-        if(m_CurrentHealth <= 0f && !m_Dead)
+        }
+
+        if (m_CurrentHealth <= 0f && !m_Dead)
         {
             onDeath();
             Score.text = "Dead";
-           // SceneManager.LoadScene("EndGUI");
+           
         }
         else if (m_CurrentHealth > 0f){
         Score.text = "100/" + Mathf.RoundToInt(m_CurrentHealth);
@@ -70,5 +84,11 @@ public class PlayerHealth : MonoBehaviour
         m_ExplosionParticles.Play();
         //End game
         gameObject.SetActive(false);
+        if (Player)
+        {
+           end.sunwinner = true;
+           SceneManager.LoadScene("EndScreen");
+        }
+       
     }
 }
