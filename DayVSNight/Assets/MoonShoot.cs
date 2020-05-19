@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoonShoot : MonoBehaviour
-{
-    public int m_PlayerNumber = 1;              
+{           
     public Rigidbody m_Bullet;                  
-    public Transform m_FirePosition;          
+    public Transform m_FireForward;
+    public Transform m_FireRight; 
+    public Transform m_FireLeft;
+    public Transform m_FireBack; 
+
     public float m_LaunchForce = 15f;  
+
+   
+
     
     private float m_CurrentLaunchForce;    
     private float ActionTime = 0.0f;
@@ -31,12 +37,19 @@ public class MoonShoot : MonoBehaviour
 
     private void Fire ()
     {
+        //Forward
+        Rigidbody bulletInstance = Instantiate (m_Bullet, m_FireForward.position, m_FireForward.rotation) as Rigidbody; 
+        bulletInstance.velocity = m_CurrentLaunchForce * (m_FireForward.forward); 
 
-        // Create an instance of the bullet and store a reference to it's rigidbody.
-        Rigidbody bulletInstance =
-            Instantiate (m_Bullet, m_FirePosition.position, m_FirePosition.rotation) as Rigidbody;
+        //Right
+        Rigidbody bulletInstance2 = Instantiate (m_Bullet, m_FireRight.position, m_FireRight.rotation) as Rigidbody; 
+        bulletInstance2.velocity = m_CurrentLaunchForce * (m_FireRight.right); 
 
-        // Set the bullet's velocity to the launch force in the fire position's forward direction.
-        bulletInstance.velocity = m_CurrentLaunchForce * m_FirePosition.forward; 
+        //Left
+        Rigidbody bulletInstance3 = Instantiate (m_Bullet, m_FireLeft.position, m_FireLeft.rotation) as Rigidbody; 
+        bulletInstance3.velocity = m_CurrentLaunchForce * (m_FireLeft.right *-1); 
+        //Back
+        Rigidbody bulletInstance4 = Instantiate (m_Bullet, m_FireBack.position, m_FireBack.rotation) as Rigidbody; 
+        bulletInstance4.velocity = m_CurrentLaunchForce * (m_FireBack.forward *-1);    
     } 
 }
