@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4096
   m_ExplosionParticles: {fileID: 2779100053886377098}
   m_MaxDamage: 50
   m_ExplosionForce: 10
