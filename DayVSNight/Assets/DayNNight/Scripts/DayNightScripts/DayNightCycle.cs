@@ -15,11 +15,6 @@ public class DayNightCycle : MonoBehaviour
         transform.LookAt(Vector3.zero);
     }
     
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SunHit(float amount)  // Positive for sun (aka moon gets hit)
     {
@@ -31,8 +26,5 @@ public class DayNightCycle : MonoBehaviour
        transform.RotateAround(Vector3.zero, Vector3.right, -amount);
        transform.LookAt(Vector3.zero);
     }
-
-    // Alternative: Boolean on player defining if sun or not, Hit(boolean sun) function which checks if the player that got hit is the sun, in that cas do SunHit, otherwise do MoonHit -- not sure how to declare the lights though!!
-
     
 }

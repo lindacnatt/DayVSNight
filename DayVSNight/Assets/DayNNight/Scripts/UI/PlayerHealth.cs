@@ -9,8 +9,11 @@ public class PlayerHealth : MonoBehaviour
     public DayNightCycle Sun;
     public DayNightCycle Moon;
     public bool Player;
-    public List<GameObject> Enemies;
-    private EndGUI end;
+    public List<PlayerHealth> Enemies;
+    public bool Dead;
+    public GameObject endCam;
+    private int enemiesDead=0;
+
 
     public float m_StartingHealth = 100f;
     public Slider m_Slider;
@@ -35,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
     private void OnEnable(){
         m_CurrentHealth = m_StartingHealth;
         m_Dead = false;
+        Dead = false;
         Score.text = "100/" + Mathf.RoundToInt(m_CurrentHealth);
 
         SetHealthUI();
@@ -77,17 +81,37 @@ public class PlayerHealth : MonoBehaviour
 
     private void onDeath(){
         m_Dead = true;
-
+        Dead = true;
+        foreach (PlayerHealth Enemy in Enemies)
+        {
+            if (Enemy.Dead)
+            {
+                enemiesDead += 1;
+                Debug.Log("Enemy dead" + enemiesDead);
+            }
+        }
         m_ExplosionParticles.transform.position = transform.position;
         m_ExplosionParticles.gameObject.SetActive(true);
 
         m_ExplosionParticles.Play();
         //End game
         gameObject.SetActive(false);
-        if (Player)
+       
+       
+        if (Player || (enemiesDead == Enemies.Count))
         {
-           end.sunwinner = true;
-           SceneManager.LoadScene("EndScreen");
+            if (Player)
+            {
+                float playerTime = Time.time;
+                Debug.Log(playerTime);
+
+                if (playerTime > PlayerPrefs.GetFloat("TopScore"))
+                {
+                    PlayerPrefs.SetFloat("TopScore", playerTime);
+                }
+                PlayerPrefs.SetFloat("PlayerScore", playerTime);
+            }
+            endCam.SetActive(true);
         }
        
     }
