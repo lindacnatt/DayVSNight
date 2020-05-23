@@ -2427,40 +2427,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2085577206}
   m_PrefabAsset: {fileID: 0}
---- !u!220 &659178783
-LightProbeGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659178782}
-  m_Enabled: 1
-  m_SourcePositions:
-  - {x: 8.026122, y: 5, z: 9.098451}
-  - {x: 9.510592, y: 5, z: -7.93}
-  - {x: 8.026122, y: 1.0674305, z: 9.098451}
-  - {x: 9.5105915, y: 1.0674301, z: -7.936538}
-  - {x: -8.85, y: 5, z: 10.2}
-  - {x: -8.85, y: 5, z: -8}
-  - {x: -8.85, y: 1.0674311, z: 10.2}
-  - {x: -8.85, y: 1.0674305, z: -8}
-  m_Dering: 1
---- !u!123 &659178784
-LensFlare:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659178782}
-  m_Enabled: 1
-  m_Flare: {fileID: 12100000, guid: 09ebe82dbd1113c3d000dc0b8d76c639, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_Brightness: 1
-  m_FadeSpeed: 3
-  m_IgnoreLayers:
-    serializedVersion: 2
-    m_Bits: 6
-  m_Directional: 0
 --- !u!154 &659178785
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -3824,40 +3790,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1060985813}
   m_PrefabAsset: {fileID: 0}
---- !u!123 &1060985816
-LensFlare:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060985815}
-  m_Enabled: 1
-  m_Flare: {fileID: 12100000, guid: 09ebe82dbd1113c3d000dc0b8d76c639, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_Brightness: 1
-  m_FadeSpeed: 3
-  m_IgnoreLayers:
-    serializedVersion: 2
-    m_Bits: 6
-  m_Directional: 0
---- !u!220 &1060985817
-LightProbeGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060985815}
-  m_Enabled: 1
-  m_SourcePositions:
-  - {x: 9.596052, y: 6, z: 8.872479}
-  - {x: 9.638904, y: 6, z: -9.549862}
-  - {x: 9.596052, y: 1, z: 8.872479}
-  - {x: 9.638904, y: 1, z: -9.549862}
-  - {x: -8.282181, y: 6, z: 8.432686}
-  - {x: -9.350002, y: 6, z: -7.885791}
-  - {x: -8.282181, y: 1, z: 8.432686}
-  - {x: -9.350002, y: 1, z: -7.885791}
-  m_Dering: 1
 --- !u!154 &1060985818
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -4344,40 +4276,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1191214421}
   m_PrefabAsset: {fileID: 0}
---- !u!123 &1191214424
-LensFlare:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191214423}
-  m_Enabled: 1
-  m_Flare: {fileID: 12100000, guid: 09ebe82dbd1113c3d000dc0b8d76c639, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_Brightness: 1
-  m_FadeSpeed: 3
-  m_IgnoreLayers:
-    serializedVersion: 2
-    m_Bits: 6
-  m_Directional: 0
---- !u!220 &1191214425
-LightProbeGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191214423}
-  m_Enabled: 1
-  m_SourcePositions:
-  - {x: 8.026122, y: 5, z: 9.098451}
-  - {x: 9.510592, y: 5, z: -7.93}
-  - {x: 8.026122, y: 1.0674305, z: 9.098451}
-  - {x: 9.5105915, y: 1.0674301, z: -7.936538}
-  - {x: -8.85, y: 5, z: 10.2}
-  - {x: -8.85, y: 5, z: -8}
-  - {x: -8.85, y: 1.0674311, z: 10.2}
-  - {x: -8.85, y: 1.0674305, z: -8}
-  m_Dering: 1
 --- !u!64 &1191214426
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6879,6 +6777,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4938173593612204906, guid: 0ac5ab3aa841947c79d91a34224244a7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30.329956
+      objectReference: {fileID: 0}
     - target: {fileID: 4938173594355961527, guid: 0ac5ab3aa841947c79d91a34224244a7,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -7818,7 +7721,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -8101,6 +8004,16 @@ PrefabInstance:
     - target: {fileID: 1555771769514396052, guid: 11e23a1d542b441e3ba736dee2f24d8f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555771769514396054, guid: 11e23a1d542b441e3ba736dee2f24d8f,
+        type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554059098216404743, guid: 11e23a1d542b441e3ba736dee2f24d8f,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
