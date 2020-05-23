@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public bool Dead;
     public GameObject endCam;
     private int enemiesDead=0;
+    private int allEnemies;
 
 
     public float m_StartingHealth = 100f;
@@ -32,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
     {
         m_ExplosionParticles = Instantiate(m_ExplosionPrefab).GetComponent<ParticleSystem>();
         m_ExplosionParticles.gameObject.SetActive(false);
+        allEnemies = Enemies.Count;
     }
 
 
@@ -98,20 +100,22 @@ public class PlayerHealth : MonoBehaviour
         gameObject.SetActive(false);
        
        
-        if (Player || (enemiesDead == Enemies.Count))
+        if (Player || (enemiesDead == allEnemies))
         {
-            if (Player)
-            {
-                float playerTime = Time.time;
-                Debug.Log(playerTime);
+            Debug.Log("Either player dead or all enemies dead");
 
-                if (playerTime > PlayerPrefs.GetFloat("TopScore"))
-                {
-                    PlayerPrefs.SetFloat("TopScore", playerTime);
-                }
-                PlayerPrefs.SetFloat("PlayerScore", playerTime);
+
+            float playerTime = Time.time;
+            Debug.Log(playerTime);
+            if (playerTime > PlayerPrefs.GetFloat("TopScore"))
+            {
+                Debug.Log("New high score!");
+                PlayerPrefs.SetFloat("TopScore", playerTime);
             }
+            PlayerPrefs.SetFloat("PlayerScore", playerTime);
+            
             endCam.SetActive(true);
+            Debug.Log("End screen activated");
         }
        
     }
