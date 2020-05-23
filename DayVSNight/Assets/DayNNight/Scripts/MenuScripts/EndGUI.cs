@@ -16,8 +16,17 @@ public class EndGUI : MonoBehaviour
     public Text playerScore;
     public Text topScore;
 
+    void Start()
+    {
+        playerScore = GetComponent<Text>();
+        topScore = GetComponent<Text>();
+        topScore.text = "";
+        playerScore.text = "";
+    }
+
     void OnEnable()
     {
+        
         Debug.Log("End screen player score: " + PlayerPrefs.GetFloat("PlayerScore"));
         playerScore.text = PlayerPrefs.GetFloat("PlayerScore").ToString();
         topScore.text = PlayerPrefs.GetFloat("TopScore").ToString();
