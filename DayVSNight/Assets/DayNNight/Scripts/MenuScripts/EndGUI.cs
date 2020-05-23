@@ -13,10 +13,16 @@ public class EndGUI : MonoBehaviour
     public GUIStyle styleBox;
     public GUIStyle styleButton;
 
-    public Text score;
+    public Text playerScore;
     public Text topScore;
 
-
+    void OnEnable()
+    {
+        Debug.Log("End screen player score: " + PlayerPrefs.GetFloat("PlayerScore"));
+        playerScore.text = PlayerPrefs.GetFloat("PlayerScore").ToString();
+        topScore.text = PlayerPrefs.GetFloat("TopScore").ToString();
+        Debug.Log("End screen top score:" + topScore.text);
+    }
     void OnGUI()
     {
         if (!Texture)  //Check that there is a texture
@@ -45,9 +51,8 @@ public class EndGUI : MonoBehaviour
         GUI.skin.button = styleButton;
 
 
-        score.text = PlayerPrefs.GetFloat("PlayerScore").ToString();
-        topScore.text = PlayerPrefs.GetFloat("TopScore").ToString();
-        GUIContent content = new GUIContent("Your score: " + score.text + "\n"+ "Top score:"+ topScore.text);
+        
+        GUIContent content = new GUIContent("Your score: " + playerScore.text + "\n"+ "Top score:"+ topScore.text);
 
         GUI.Box(new Rect(marginx + 100, marginy + 3 * buttonheight, 200, 200), content);
         GUI.skin.box = styleBox;

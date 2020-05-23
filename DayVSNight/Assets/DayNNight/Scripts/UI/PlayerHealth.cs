@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public List<PlayerHealth> Enemies;
     public bool Dead;
     public GameObject endCam;
+    public EndGUI end;
     private int enemiesDead=0;
     private int allEnemies;
 
@@ -34,6 +35,15 @@ public class PlayerHealth : MonoBehaviour
         m_ExplosionParticles = Instantiate(m_ExplosionPrefab).GetComponent<ParticleSystem>();
         m_ExplosionParticles.gameObject.SetActive(false);
         allEnemies = Enemies.Count;
+
+        if (PlayerPrefs.GetFloat("TopScore")==null)
+        {
+            PlayerPrefs.SetFloat("TopScore", 0);
+        }
+
+        
+        PlayerPrefs.SetFloat("PlayerScore", 0);
+       
     }
 
 
@@ -106,17 +116,32 @@ public class PlayerHealth : MonoBehaviour
 
 
             float playerTime = Time.time;
-            Debug.Log(playerTime);
-            if (playerTime > PlayerPrefs.GetFloat("TopScore"))
+            float highScore = PlayerPrefs.GetFloat("TopScore");
+            Debug.Log("This score: " + playerTime);
+            Debug.Log("TopScore " + highScore);
+            if (playerTime < highScore)
             {
                 Debug.Log("New high score!");
                 PlayerPrefs.SetFloat("TopScore", playerTime);
+                highScore = PlayerPrefs.GetFloat("TopScore");
             }
+            Debug.Log(highScore) ;
             PlayerPrefs.SetFloat("PlayerScore", playerTime);
+
+            PlayerPrefs.Save();
+
             
+
             endCam.SetActive(true);
+            
             Debug.Log("End screen activated");
         }
        
     }
 }
+
+
+/*   
+   end.topScore.text = highScore.ToString(); // this is the issue!! Not set to an instance of an object
+   end.playerScore.text = playerTime.ToString(); 
+   */
