@@ -34,7 +34,7 @@ namespace Complete
                     continue;
                     Debug.Log("No hit!");
                     
-                targetRigidbody.AddExplosionForce (m_ExplosionForce, transform.position, m_ExplosionRadius);
+                //targetRigidbody.AddExplosionForce (m_ExplosionForce, transform.position, m_ExplosionRadius);
 
                 PlayerHealth targetHealth = targetRigidbody.GetComponent<PlayerHealth>();
                 
