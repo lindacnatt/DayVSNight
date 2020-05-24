@@ -13,24 +13,21 @@ public class EndGUI : MonoBehaviour
     public GUIStyle styleBox;
     public GUIStyle styleButton;
 
-    public Text playerScore;
-    public Text topScore;
+    private string playerScore;
+    private string topScore;
 
     void Start()
     {
-        playerScore = GetComponent<Text>();
-        topScore = GetComponent<Text>();
-        topScore.text = "";
-        playerScore.text = "";
+ 
     }
 
-    void OnEnable()
+    void Awake()
     {
         
         Debug.Log("End screen player score: " + PlayerPrefs.GetFloat("PlayerScore"));
-        playerScore.text = PlayerPrefs.GetFloat("PlayerScore").ToString();
-        topScore.text = PlayerPrefs.GetFloat("TopScore").ToString();
-        Debug.Log("End screen top score:" + topScore.text);
+        playerScore = PlayerPrefs.GetFloat("PlayerScore").ToString();
+        topScore = PlayerPrefs.GetFloat("TopScore").ToString();
+        Debug.Log("End screen top score:" + topScore);
     }
     void OnGUI()
     {
@@ -61,7 +58,7 @@ public class EndGUI : MonoBehaviour
 
 
         
-        GUIContent content = new GUIContent("Your score: " + playerScore.text + "\n"+ "Top score:"+ topScore.text);
+        GUIContent content = new GUIContent("Your score: " + playerScore + "\n"+ "Top score: "+ topScore);
 
         GUI.Box(new Rect(marginx + 100, marginy + 3 * buttonheight, 200, 200), content);
         GUI.skin.box = styleBox;

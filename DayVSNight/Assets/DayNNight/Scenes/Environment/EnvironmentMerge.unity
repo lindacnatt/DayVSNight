@@ -8136,9 +8136,9 @@ MonoBehaviour:
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Border:
-      m_Left: 0
+      m_Left: 10
       m_Right: 0
-      m_Top: 0
+      m_Top: 10
       m_Bottom: 0
     m_Margin:
       m_Left: 0
@@ -8158,7 +8158,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
-    m_Alignment: 0
+    m_Alignment: 1
     m_WordWrap: 0
     m_RichText: 1
     m_TextClipping: 0
@@ -8235,8 +8235,6 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  score: {fileID: 0}
-  topScore: {fileID: 0}
 --- !u!114 &1991693650
 MonoBehaviour:
   m_ObjectHideFlags: 0
