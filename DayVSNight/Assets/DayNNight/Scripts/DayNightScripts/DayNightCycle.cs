@@ -11,20 +11,22 @@ public class DayNightCycle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.RotateAround(Vector3.zero, Vector3.right, -30f);
+        transform.RotateAround(Vector3.zero, Vector3.right, -60);
         transform.LookAt(Vector3.zero);
     }
     
 
-    public void SunHit(float amount)  // Positive for sun (aka moon gets hit)
+    public void SunHit(float amount)  // Negative for sun (aka sun gets hit)
     {
-        transform.RotateAround(Vector3.zero, Vector3.right, amount);
+        transform.RotateAround(Vector3.zero, Vector3.right, -amount);
         transform.LookAt(Vector3.zero);
+        Debug.Log("Down");
     }
-    public void MoonHit(float amount)  // Positive for moon (aka sun gets hit)
+    public void MoonHit(float amount)  // Positive for sun (aka moon gets hit)
     {
-       transform.RotateAround(Vector3.zero, Vector3.right, -amount);
+       transform.RotateAround(Vector3.zero, Vector3.right, amount);
        transform.LookAt(Vector3.zero);
+        Debug.Log("Up");
     }
     
 }

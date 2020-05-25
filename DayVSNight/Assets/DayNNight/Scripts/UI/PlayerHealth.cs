@@ -65,8 +65,8 @@ public class PlayerHealth : MonoBehaviour
         }
         if (!Player) 
         {
-            Sun.MoonHit(10);
-            Moon.MoonHit(10);
+            Sun.MoonHit(2);
+            Moon.MoonHit(2);
 
         }
 
@@ -111,21 +111,16 @@ public class PlayerHealth : MonoBehaviour
        
         if (Player || (enemiesDead == allEnemies))
         {
-          //  Debug.Log("Either player dead or all enemies dead");
 
 
             float playerTime = Time.time;
             float highScore = PlayerPrefs.GetFloat("TopScore");
-           // Debug.Log("This score: " + playerTime);
-            //Debug.Log("TopScore " + highScore);
-
+      
             if (playerTime < highScore)
             {
-                //Debug.Log("New high score!");
                 PlayerPrefs.SetFloat("TopScore", playerTime);
                 highScore = PlayerPrefs.GetFloat("TopScore");
             }
-           // Debug.Log(highScore) ;
             PlayerPrefs.SetFloat("PlayerScore", playerTime);
 
             PlayerPrefs.Save();
