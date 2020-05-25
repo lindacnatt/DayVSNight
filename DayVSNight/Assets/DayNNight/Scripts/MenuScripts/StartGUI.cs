@@ -1,25 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartGUI : MonoBehaviour
 {
     public Texture aTexture;
-    public GUIStyle styleBox;
     public GUIStyle styleButton;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 
     void OnGUI()
     {
@@ -37,7 +27,6 @@ public class StartGUI : MonoBehaviour
         int marginy = 200;
        
 
-        // GUI.DrawTexture(new Rect(150, 100, 1600, 900), aTexture, ScaleMode.ScaleToFit, true, 10.0F);  // Not quite good
 
         // Make a background box for the start menu
         GUI.DrawTexture(new Rect(0, 0, screenwidth, Screen.height), aTexture, ScaleMode.ScaleToFit, true);
@@ -47,7 +36,7 @@ public class StartGUI : MonoBehaviour
         if (GUI.Button(new Rect(marginx+(700-buttonwidth)/2, marginy+140, buttonwidth, buttonheight), "Start"))
         {
             Debug.Log("Start!");
-            //Application.LoadLevel(1);
+            SceneManager.LoadScene(0);
         }
 
         // Make the second button, quit application if pressed.
