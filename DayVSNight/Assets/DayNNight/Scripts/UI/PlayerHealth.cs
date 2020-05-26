@@ -2,15 +2,19 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public DayNightCycle Sun;
     public DayNightCycle Moon;
     public bool Player;
-    public List<GameObject> Enemies;
-    private EndGUI end;
+    public List<PlayerHealth> Enemies;
+    public bool Dead;
+    public GameObject endCam;
+    public EndGUI end;
+    private int enemiesDead=0;
+    private int allEnemies;
+
 
     public float m_StartingHealth = 100f;
     public Slider m_Slider;
@@ -29,12 +33,23 @@ public class PlayerHealth : MonoBehaviour
     {
         m_ExplosionParticles = Instantiate(m_ExplosionPrefab).GetComponent<ParticleSystem>();
         m_ExplosionParticles.gameObject.SetActive(false);
+        allEnemies = Enemies.Count;
+
+        if (PlayerPrefs.GetFloat("TopScore")==null)
+        {
+            PlayerPrefs.SetFloat("TopScore", 0);
+        }
+
+        
+        PlayerPrefs.SetFloat("PlayerScore", 0);
+       
     }
 
 
     private void OnEnable(){
         m_CurrentHealth = m_StartingHealth;
         m_Dead = false;
+        Dead = false;
         Score.text = "100/" + Mathf.RoundToInt(m_CurrentHealth);
 
         SetHealthUI();
@@ -45,13 +60,13 @@ public class PlayerHealth : MonoBehaviour
         m_CurrentHealth -= amount;
         if (Player)
         {
-            Sun.SunHit(amount);
-            Moon.SunHit(amount);       // Toggles the sun/moon to go through one step of the day night cycle
+            Sun.SunHit(10);
+            Moon.SunHit(10);       // Toggles the sun/moon to go through one step of the day night cycle
         }
-        if (!Player)
+        if (!Player) 
         {
-            Sun.MoonHit(amount);
-            Moon.MoonHit(amount);
+            Sun.MoonHit(2);
+            Moon.MoonHit(2);
 
         }
 
@@ -71,24 +86,55 @@ public class PlayerHealth : MonoBehaviour
     }
 
     private void SetHealthUI(){
+        //affects the appearence of the health bar, changes the value and the color
         m_Slider.value = m_CurrentHealth;
         m_FillImage.color = Color.Lerp(m_ZeroHealthColor,m_FullHealthColor, m_CurrentHealth / m_StartingHealth);
     }
 
     private void onDeath(){
         m_Dead = true;
-
+        Dead = true;
+        foreach (PlayerHealth Enemy in Enemies)
+        {
+            if (Enemy.Dead)
+            {
+                enemiesDead += 1;
+                Debug.Log("Enemy dead" + enemiesDead);
+            }
+        }
+        //Explode when dead
         m_ExplosionParticles.transform.position = transform.position;
         m_ExplosionParticles.gameObject.SetActive(true);
 
         m_ExplosionParticles.Play();
         //End game
         gameObject.SetActive(false);
-        if (Player)
+       
+       
+        if (Player || (enemiesDead == allEnemies))
         {
-           end.sunwinner = true;
-           SceneManager.LoadScene("EndScreen");
+
+
+            float playerTime = Time.time;
+            float highScore = PlayerPrefs.GetFloat("TopScore");
+      
+            if (playerTime < highScore)
+            {
+                PlayerPrefs.SetFloat("TopScore", playerTime);
+                highScore = PlayerPrefs.GetFloat("TopScore");
+            }
+            PlayerPrefs.SetFloat("PlayerScore", playerTime);
+
+            PlayerPrefs.Save();
+
+            
+
+            endCam.SetActive(true);
+            
+            Debug.Log("End screen activated");
         }
        
     }
 }
+
+
