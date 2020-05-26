@@ -86,6 +86,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     private void SetHealthUI(){
+        //affects the appearence of the health bar, changes the value and the color
         m_Slider.value = m_CurrentHealth;
         m_FillImage.color = Color.Lerp(m_ZeroHealthColor,m_FullHealthColor, m_CurrentHealth / m_StartingHealth);
     }
@@ -101,6 +102,7 @@ public class PlayerHealth : MonoBehaviour
                 Debug.Log("Enemy dead" + enemiesDead);
             }
         }
+        //Explode when dead
         m_ExplosionParticles.transform.position = transform.position;
         m_ExplosionParticles.gameObject.SetActive(true);
 
@@ -136,7 +138,3 @@ public class PlayerHealth : MonoBehaviour
 }
 
 
-/*   
-   end.topScore.text = highScore.ToString(); // this is the issue!! Not set to an instance of an object
-   end.playerScore.text = playerTime.ToString(); 
-   */

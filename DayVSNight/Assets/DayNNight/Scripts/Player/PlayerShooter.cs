@@ -28,6 +28,7 @@ namespace Complete
         // Update is called once per frame
         private void Update ()
         {
+            //When pressing Ctrl - fire the bullet
             if (Input.GetButtonDown (m_FireButton))
             {
                 Fire ();
