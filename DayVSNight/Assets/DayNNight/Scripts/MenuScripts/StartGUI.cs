@@ -36,7 +36,7 @@ public class StartGUI : MonoBehaviour
         if (GUI.Button(new Rect(marginx+(700-buttonwidth)/2, marginy+140, buttonwidth, buttonheight), "Start"))
         {
             Debug.Log("Start!");
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         // Make the second button, quit application if pressed.
